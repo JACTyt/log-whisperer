@@ -1,0 +1,1 @@
+{"@timestamp":"2020-08-07T14:32:25.358Z","winlog":{"event_id":4625,"channel":"Security","computer_name":"WORKSTATION5.theshire.local","provider_name":"Microsoft-Windows-Security-Auditing","record_id":77,"event_data":{"TargetUserName":"Administrator","TargetDomainName":"THESHIRE","IpAddress":"10.0.0.5","LogonType":"3"}},"agent":{"type":"winlogbeat"}}

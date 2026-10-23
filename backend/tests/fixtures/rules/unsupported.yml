@@ -1,0 +1,24 @@
+title: macOS Thing
+id: 6f7b9a50-0000-4000-8000-000000000005
+status: test
+level: low
+logsource:
+    product: macos
+    category: process_creation
+detection:
+    selection:
+        Image|endswith: '/osascript'
+    condition: selection
+---
+title: Many Failed Logons
+id: 6f7b9a50-0000-4000-8000-000000000006
+status: test
+correlation:
+    type: event_count
+    rules:
+        - 6f7b9a50-0000-4000-8000-000000000001
+    group-by:
+        - src_ip
+    timespan: 5m
+    condition:
+        gte: 10

@@ -1,0 +1,7 @@
+name: evtx-iis-webshell
+description: EVTX-ATTACK-SAMPLES — IIS worker process (w3wp) spawning cmd.exe running net user (web shell).
+files: ["datasets/evtx-attack-samples/EVTX-ATTACK-SAMPLES-master/Lateral Movement/LM_typical_IIS_webshell_sysmon_1_10_traces.evtx"]
+expected_techniques: [T1505.003, T1087.001]
+key_facts:
+  - {entity: "net user", action: process_start, approx_ts: "2019-05-24T01:33:53Z"}
+  - {entity: defaultapppool}

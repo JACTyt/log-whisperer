@@ -1,0 +1,10 @@
+name: web-sqli-to-ssh
+description: sqlmap SQL injection and path traversal against the web app, then SSH brute force from the same IP (cross-source correlation).
+files: [backend/tests/fixtures/access.log, backend/tests/fixtures/auth.log]
+authlog_year: 2026
+expected_techniques: [T1190, T1110.001, T1078, T1136.001]
+key_facts:
+  - {entity: "UNION", action: http_request, approx_ts: "2026-03-14T13:59:31Z"}
+  - {entity: "etc/passwd", action: http_request}
+  - {entity: "203.0.113.7", action: ssh_auth, outcome: success}
+  - {entity: backdoor, action: user_created}

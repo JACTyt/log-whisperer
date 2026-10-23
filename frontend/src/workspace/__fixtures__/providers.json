@@ -1,0 +1,1 @@
+{"default":"ollama","providers":[{"name":"ollama","model":"juilpark/gemma-4-26B-A4B-it-heretic:q4_k_m"},{"name":"anthropic","model":"claude-opus-5-5"},{"name":"openai","model":null}],"available":["ollama","anthropic","openai"]}

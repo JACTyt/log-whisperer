@@ -1,0 +1,31 @@
+# Copy to config.toml (or point LOGW_CONFIG at it). Every key is optional.
+# Secrets (API keys) never go here — use environment variables, see .env.example.
+
+[storage]
+db_path = "data/logw.duckdb"
+
+[detection]
+sigma_dirs = ["../rules/sigma", "../rules/custom"]
+brute_force_threshold = 10
+brute_force_window_min = 5
+brute_force_success_window_min = 30
+impossible_travel_kmh = 900
+new_admin_window_min = 60
+admin_groups = ["administrators", "domain admins", "enterprise admins", "sudo", "wheel", "admin"]
+
+[geoip]
+path = "data/geoip/dbip-city-lite.mmdb"
+
+[incidents]
+group_gap_minutes = 30
+context_neighbors = 20
+context_max = 300
+
+[llm]
+provider = "ollama"        # ollama | anthropic | openai
+model = "gemma4:26b-a4b"
+
+[live]
+bind = "127.0.0.1"
+syslog_port = 5514
+tail_paths = []

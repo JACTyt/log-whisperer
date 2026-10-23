@@ -1,0 +1,50 @@
+[project]
+name = "log-whisperer"
+version = "0.1.0"
+description = "AI assistant that turns raw logs into cited, ATT&CK-mapped attack timelines"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Dmytro Maistruk", email = "dmutro.maystruk@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.1.0",
+    "duckdb>=2.0.0",
+    "evtx>=0.14.0",
+    "fastapi>=0.161.0",
+    "markdown-it-py>=4.2.0",
+    "maxminddb>=3.2.0",
+    "mdit-py-plugins>=0.6.1",
+    "ollama>=0.6.3",
+    "openai>=3.37.0",
+    "pyarrow>=26.0.0",
+    "pydantic>=2.14.1",
+    "pysigma>=2.0.1",
+    "python-multipart>=0.0.32",
+    "pyyaml>=6.0.3",
+    "sse-starlette>=3.5.0",
+    "typer>=0.27.3",
+    "uvicorn>=0.54.0",
+    "weasyprint>=70.0",
+]
+
+[project.scripts]
+logw = "log_whisperer.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.10.11,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+markers = ["live: hits a real LLM provider or network (deselected by default)"]
+addopts = "-m 'not live'"

@@ -1,0 +1,11 @@
+title: Experimental Whoami
+id: 6f7b9a50-0000-4000-8000-000000000004
+status: experimental
+level: medium
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection:
+        Image|endswith: '\whoami.exe'
+    condition: selection

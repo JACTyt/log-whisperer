@@ -1,0 +1,6 @@
+name: evtx-kerberos-spray
+description: EVTX-ATTACK-SAMPLES — Kerberos pre-authentication failures (4771) from one source against several accounts.
+files: ["datasets/evtx-attack-samples/EVTX-ATTACK-SAMPLES-master/Credential Access/kerberos_pwd_spray_4771.evtx"]
+expected_techniques: [T1110.003]
+key_facts:
+  - {entity: "172.16.66.1", action: kerberos_preauth, outcome: failure, approx_ts: "2020-07-22T20:29:36Z"}

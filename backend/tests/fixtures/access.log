@@ -1,0 +1,11 @@
+192.168.10.5 - - [14/Mar/2026:13:50:00 +0000] "GET / HTTP/1.1" 200 5120 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+192.168.10.5 - - [14/Mar/2026:13:50:01 +0000] "GET /static/app.css HTTP/1.1" 200 812 "http://web01/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+198.51.100.23 - - [14/Mar/2026:13:51:10 +0000] "GET /admin HTTP/1.1" 404 162 "-" "Mozilla/5.0 zgrab/0.x"
+198.51.100.23 - - [14/Mar/2026:13:51:11 +0000] "GET /wp-login.php HTTP/1.1" 404 162 "-" "Mozilla/5.0 zgrab/0.x"
+198.51.100.23 - - [14/Mar/2026:13:51:12 +0000] "GET /.env HTTP/1.1" 404 162 "-" "Mozilla/5.0 zgrab/0.x"
+203.0.113.7 - - [14/Mar/2026:13:59:30 +0000] "GET /products.php?id=1'%20OR%201=1--%20- HTTP/1.1" 500 0 "-" "sqlmap/1.8#stable (https://sqlmap.org)"
+203.0.113.7 - - [14/Mar/2026:13:59:31 +0000] "GET /products.php?id=1%20UNION%20SELECT%20username,password%20FROM%20users HTTP/1.1" 200 2048 "-" "sqlmap/1.8#stable (https://sqlmap.org)"
+203.0.113.7 - - [14/Mar/2026:14:00:05 +0000] "GET /download.php?file=../../../../etc/passwd HTTP/1.1" 200 1840 "-" "curl/8.5.0"
+2001:db8::1 - alice [14/Mar/2026:14:01:00 +0000] "POST /api/login HTTP/2.0" 302 - "https://web01/login" "Mozilla/5.0"
+10.0.0.8 - - [14/Mar/2026:14:01:30 +0000] "-" 400 0 "-" "-"
+10.0.0.9 - - [14/Mar/2026:14:01:40 +0000] "GET /health HTTP/1.0" 200 2

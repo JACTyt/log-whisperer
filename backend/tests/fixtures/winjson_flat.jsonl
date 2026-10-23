@@ -1,0 +1,5 @@
+{"tags":["mordorDataset"],"@version":"1","Channel":"Security","SourceName":"Microsoft-Windows-Security-Auditing","Hostname":"WORKSTATION5.theshire.local","@timestamp":"2020-08-07T14:32:25.358Z","Message":"An account failed to log on.","EventID":4625,"TargetUserName":"Administrator","TargetDomainName":"THESHIRE","IpAddress":"10.0.0.5","LogonType":"3","RecordNumber":1001,"host":"wec.internal.cloudapp.net"}
+{"tags":["mordorDataset"],"Channel":"Microsoft-Windows-Sysmon/Operational","SourceName":"Microsoft-Windows-Sysmon","Hostname":"WORKSTATION5.theshire.local","@timestamp":"2020-08-07T14:32:25.400Z","UtcTime":"2020-08-07 14:32:22.692","EventID":1,"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -nop -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQA","User":"THESHIRE\\pgustavo","RecordNumber":1002}
+not json at all
+{"Channel":"Security","Hostname":"WORKSTATION5","@timestamp":"2020-08-07T16:32:25.358+02:00","EventID":"4624","TargetUserName":"pgustavo","IpAddress":"-","RecordNumber":1003}
+{"some":"json","without":"eventid"}

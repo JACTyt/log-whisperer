@@ -1,0 +1,15 @@
+title: SQL Injection Strings In URI
+id: 6f7b9a50-0000-4000-8000-000000000003
+status: test
+level: high
+tags:
+    - attack.initial-access
+    - attack.t1190
+logsource:
+    category: webserver
+detection:
+    selection:
+        cs-uri-query|contains:
+            - 'UNION%20SELECT'
+            - "'%20OR%201=1"
+    condition: selection

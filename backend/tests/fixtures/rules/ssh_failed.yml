@@ -1,0 +1,14 @@
+title: SSH Failed Password
+id: 6f7b9a50-0000-4000-8000-000000000001
+status: test
+level: low
+tags:
+    - attack.credential-access
+    - attack.t1110.001
+logsource:
+    product: linux
+    service: sshd
+detection:
+    keywords:
+        - 'Failed password'
+    condition: keywords

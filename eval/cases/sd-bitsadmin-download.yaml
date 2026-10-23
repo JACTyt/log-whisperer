@@ -1,0 +1,7 @@
+name: sd-bitsadmin-download
+description: Security-Datasets — bitsadmin /transfer downloading a PowerShell script (BITS jobs, ingress tool transfer).
+files: [datasets/security-datasets/bitsadmin]
+expected_techniques: [T1197, T1105]
+key_facts:
+  - {entity: bitsadmin, action: process_start, approx_ts: "2020-10-23T06:36:43Z"}
+  - {entity: wardog}

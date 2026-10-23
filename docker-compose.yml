@@ -1,0 +1,34 @@
+# docker compose up --build   ->  UI at http://localhost:8080
+# Ollama runs natively on the host (GPU without passthrough setup); the backend reaches it via host.docker.internal.
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OLLAMA_HOST: ${OLLAMA_HOST:-http://host.docker.internal:11434}
+      LOGW_OLLAMA_MODEL: ${LOGW_OLLAMA_MODEL:-gemma4:26b-a4b}
+      LOGW_LLM_PROVIDER: ${LOGW_LLM_PROVIDER:-ollama}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - logw-data:/data
+      - ./rules/drafts:/app/rules/drafts
+      - ./rules/custom:/app/rules/custom:ro
+      - ./datasets:/datasets:ro
+    ports:
+      - "127.0.0.1:5514:5514/udp"
+      - "127.0.0.1:5514:5514/tcp"
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8080:80"
+
+volumes:
+  logw-data:

@@ -1,0 +1,52 @@
+# --- Python -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Node / frontend ----------------------------------------------------------
+node_modules/
+frontend/dist/
+frontend/coverage/
+*.tsbuildinfo
+
+# --- Secrets and local configuration -------------------------------------------
+# API keys live only in the environment; .env.example documents them.
+.env
+.env.*
+!.env.example
+backend/config.toml
+.claude/settings.local.json
+
+# --- Data produced by running the app (may contain real log content) ----------
+# Database, uploaded log copies, GeoIP database
+backend/data/
+*.duckdb
+*.duckdb.wal
+*.mmdb
+# Downloaded attack datasets (fetched by scripts/fetch_datasets.py; GPL/MIT, not redistributed)
+datasets/
+# Incident reports exported by `logw report` (incident-<id>.md / .pdf)
+incident-*.md
+incident-*.pdf
+# Machine-written Sigma rule drafts: review, then move good ones to rules/custom/ to commit them
+rules/drafts/*
+!rules/drafts/.gitkeep
+# Per-run eval details; eval/results/SUMMARY.md is committed
+eval/results/*.json
+
+# --- Generated files ------------------------------------------------------------
+# `logw openapi` output (frontend/src/api/schema.ts is generated from it and IS committed)
+openapi.json
+
+# --- IDE / OS --------------------------------------------------------------------
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,7 @@
+name: evtx-wmiexec-impacket
+description: EVTX-ATTACK-SAMPLES — impacket wmiexec running whoami on the target through WMI.
+files: ["datasets/evtx-attack-samples/EVTX-ATTACK-SAMPLES-master/Lateral Movement/LM_wmiexec_impacket_sysmon_whoami.evtx"]
+expected_techniques: [T1047, T1033]
+key_facts:
+  - {entity: whoami, action: process_start, approx_ts: "2019-04-30T20:32:51Z"}
+  - {entity: IEWIN7}

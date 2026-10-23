@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/jetbrains-mono/400.css';
+
+/* Dark is the default; [data-theme='light'] on <html> switches. */
+@theme {
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-ink: #161c27;
+  --color-panel: #1e2633;
+  --color-raised: #253042;
+  --color-rule: #2c3646;
+  --color-text: #dce3ec;
+  --color-muted: #8b97a8;
+  --color-evidence: #f0b429;
+  --color-evidence-ink: #2a1f05;
+
+  --color-sev-critical: #f05252;
+  --color-sev-high: #f08c4a;
+  --color-sev-medium: #7aa2f7;
+  --color-sev-low: #6cc3a0;
+  --color-sev-informational: #8b97a8;
+}
+
+[data-theme='light'] {
+  --color-ink: #eef1f5;
+  --color-panel: #ffffff;
+  --color-raised: #f3f5f8;
+  --color-rule: #d5dbe3;
+  --color-text: #1b2330;
+  --color-muted: #5b6676;
+  --color-evidence: #c98a00;
+  --color-evidence-ink: #ffffff;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-evidence);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,8 @@
+title: Broken
+id: not-a-uuid
+logsource:
+    product: windows
+detection:
+    selection:
+        Image|nosuchmodifier: 'x'
+    condition: selection and missing_identifier

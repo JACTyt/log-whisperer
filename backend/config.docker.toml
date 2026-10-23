@@ -1,0 +1,23 @@
+# Configuration baked into the Docker image. Secrets come from environment variables only.
+
+[storage]
+db_path = "/data/logw.duckdb"
+upload_dir = "/data/uploads"
+
+[api]
+host = "0.0.0.0"
+port = 8000
+
+[detection]
+sigma_dirs = ["/app/rules/sigma", "/app/rules/custom"]
+drafts_dir = "/app/rules/drafts"
+
+[geoip]
+path = "/data/geoip/dbip-city-lite.mmdb"
+
+[llm]
+provider = "ollama"
+
+[live]
+bind = "0.0.0.0"
+syslog_port = 5514

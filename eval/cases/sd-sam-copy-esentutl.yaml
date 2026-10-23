@@ -1,0 +1,7 @@
+name: sd-sam-copy-esentutl
+description: Security-Datasets — copying the SAM hive with esentutl.exe for offline credential extraction.
+files: [datasets/security-datasets/sam-copy-esentutl]
+expected_techniques: [T1003.002]
+key_facts:
+  - {entity: esentutl, action: process_start, approx_ts: "2020-10-19T04:28:31Z"}
+  - {entity: wardog}
